@@ -7,5 +7,6 @@
 
 ### Instructions
 1. Clone repository
-2. Run `vagrant up`
-3. Access ckan-ngds instance @ `192.168.10.42`
+2. CD to cloned repository
+3. Run `vagrant up`
+4. Access ckan-ngds instance @ `192.168.10.42`
