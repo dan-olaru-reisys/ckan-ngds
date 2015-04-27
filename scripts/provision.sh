@@ -14,10 +14,15 @@ yum install -y libxml2-2.9.0 gdal-1.9.2 gdal-python-1.9.2 gdal-devel-1.9.2 yum-u
 yum-config-manager --disable pgdg93
 yum install -y ngds.ckan
 
-#if [ -d "/vagrant/src" ]; then
-#  rm -rf /usr/lib/ckan/src
-#  ln -s /vagrant/src /usr/lib/ckan/src
-#else 
-#  mv /usr/lib/ckan/src /vagrant
-#  ln -s /vagrant/src /usr/lib/ckan/src
-#fi
+if [ -d "/vagrant/src" ]; then
+  rm -rf /usr/lib/ckan/src
+  ln -s /vagrant/src /usr/lib/ckan/src
+else 
+  mv /usr/lib/ckan/src /vagrant
+  ln -s /vagrant/src /usr/lib/ckan/src
+fi
+
+cp /vagrant/config/production.ini /etc/ckan/production.ini
+cp /vagrant/config/global.xml /var/lib/tomcat6/webapps/geoserver/data/global.xml
+cp /vagrant/config/ckan-harvest /etc/cron.d/ckan-harvest
+cp /vagrant/config/supervisord.conf /etc/supervisord.conf
