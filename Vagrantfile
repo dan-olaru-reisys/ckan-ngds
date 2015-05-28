@@ -18,7 +18,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider :virtualbox do |vb|
     # Customize the amount of memory on the VM:
-    vb.memory = "2048"
+    vb.memory = "4096"
     vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
   end
 
